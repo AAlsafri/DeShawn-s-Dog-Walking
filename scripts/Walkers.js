@@ -16,8 +16,12 @@ export const Walkers = () => {
   const walkers = getWalkers();
   let walkersHTML = "<ul>";
   for (const walker of walkers) {
-    walkersHTML += `<li>${walker.name} (${walker.city})</li>`;
+    walkersHTML += `<li data-id="${walker.id}"
+                    data-city="${walker.city}"
+                    >${walker.name}
+                    </li>`;
   }
+
   walkersHTML += "</ul>";
   return walkersHTML;
 };

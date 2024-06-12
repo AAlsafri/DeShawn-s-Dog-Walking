@@ -6,7 +6,7 @@ import { RegisteredPets } from "./RegisteredPets.js";
 const mainContainer = document.querySelector("#container");
 
 const applicationHTML = `
-<h1>DeShawns Dog Walking</h1>
+<h1 class="title">DeShawn's Dog Walking</h1>
 <article class="details">
     <section class="detail--column list details__cities">
         <h2>Cities with Service</h2>
@@ -22,7 +22,7 @@ const applicationHTML = `
     </section>
 </article>
 
-<article class="assignments">
+<article class="assignments-container">
     <h2>Current Assignments</h2>
     ${Assignments()}
 </article>
