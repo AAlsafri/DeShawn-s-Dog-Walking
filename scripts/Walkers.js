@@ -13,7 +13,10 @@ import { getWalkers } from "./database.js";
 // };
 document.addEventListener("click", (clickEvent) => {
   const whatWasClickedOn = clickEvent.target;
-  window.alert(`This walker works in ${whatWasClickedOn.dataset.city}`);
+
+  if (whatWasClickedOn.dataset.type === "walker") {
+    window.alert(`This walker works in ${whatWasClickedOn.dataset.city}`);
+  }
 });
 
 export const Walkers = () => {
@@ -22,6 +25,7 @@ export const Walkers = () => {
   for (const walker of walkers) {
     walkersHTML += `<li data-id="${walker.id}"
                     data-city="${walker.city}"
+                    data-type="walker"
                     >${walker.name}
                     </li>`;
   }
