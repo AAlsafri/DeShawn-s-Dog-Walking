@@ -11,6 +11,10 @@ import { getWalkers } from "./database.js";
 
 //   return (walkerHTML += "</ul>");
 // };
+document.addEventListener("click", (clickEvent) => {
+  const whatWasClickedOn = clickEvent.target;
+  window.alert(`This walker works in ${whatWasClickedOn.dataset.city}`);
+});
 
 export const Walkers = () => {
   const walkers = getWalkers();
