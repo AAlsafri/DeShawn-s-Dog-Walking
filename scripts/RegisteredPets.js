@@ -6,7 +6,7 @@ export const RegisteredPets = () => {
   let petsHTML = "<ul>";
 
   for (const pet of pets) {
-    petsHTML += `<li>${pet.name}</li>`;
+    petsHTML += `<li data-walkerForeignKey="${pet.walkerId}>${pet.name}</li>`;
   }
 
   petsHTML += "</ul>";
