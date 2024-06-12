@@ -1,21 +1,21 @@
-import { getWalkers } from "./database.js";
+import { getWalkers, getCities } from "./database.js";
 
-// const walkers = getWalkers();
-
-// export const Walkers = () => {
-//   let walkerHTML = "<ul>";
-
-//   for (const walker of walkers) {
-//     walkerHTML += `<li>${walker.name}</li>`;
-//   }
-
-//   return (walkerHTML += "</ul>");
-// };
 document.addEventListener("click", (clickEvent) => {
   const whatWasClickedOn = clickEvent.target;
 
   if (whatWasClickedOn.dataset.type === "walker") {
-    window.alert(`This walker works in ${whatWasClickedOn.dataset.city}`);
+    const walkerId = whatWasClickedOn.dataset.id;
+    let walkerCity = "";
+    const cities = getCities();
+    for (const city of cities) {
+      if (parseInt(walkerId) === city.id) {
+        walkerCity = city.name;
+      }
+    }
+    //const city = cities.find(
+    //(city) => city.id === parseInt(whatWasClickedOn.dataset.cityId)
+    //);
+    window.alert(`This walker works in ${walkerCity}`);
   }
 });
 
@@ -24,7 +24,7 @@ export const Walkers = () => {
   let walkersHTML = "<ul>";
   for (const walker of walkers) {
     walkersHTML += `<li data-id="${walker.id}"
-                    data-city="${walker.city}"
+                    data-city="${walker.cityId}"
                     data-type="walker"
                     >${walker.name}
                     </li>`;

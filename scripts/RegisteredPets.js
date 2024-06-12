@@ -5,8 +5,6 @@ document.addEventListener("click", (clickEvent) => {
 
   const walkerId = clickTarget.dataset.walkerforeignkey;
 
-  // Find the entire walker obj based on walkerId from above
-
   const allWalkers = getWalkers();
   for (const walker of allWalkers) {
     if (walker.id === parseInt(walkerId)) {
@@ -17,7 +15,6 @@ document.addEventListener("click", (clickEvent) => {
 
 export const RegisteredPets = () => {
   const pets = getPets();
-  console.log("Pets data:", pets); // Debugging statement
   let petsHTML = "<ul>";
 
   for (const pet of pets) {
